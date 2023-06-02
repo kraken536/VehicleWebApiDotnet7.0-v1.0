@@ -16,7 +16,7 @@ namespace VehicleWebApiDonet7.Controllers
             _boatService = boatService;   
         }
 
-        [HttpPost]
+        [HttpPost("add")]
         public ActionResult<List<Boat>> AddNewBoat(Boat boat)
         {
             var result = _boatService.AddNewBoat(boat);
@@ -28,7 +28,7 @@ namespace VehicleWebApiDonet7.Controllers
             return result;
         }
 
-        [HttpPost("{color}")]
+        [HttpGet("{color}")]
         public ActionResult<List<Boat>> GetBoatByColor(string color)
         {
             var result = _boatService.GetBoatsByColor(color);
